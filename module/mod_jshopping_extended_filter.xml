@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="2.5" method="upgrade">
+	<name>Extended Filter for Joomshopping</name>
+	<author>Andrey M</author>
+	<creationDate>Jan 2016</creationDate>
+	<copyright>Copyright (c) 2012 Andrey M. All rights reserved.</copyright>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.4.3</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Thank you for installing the Joomshopping Extended Search module</description>
+	
+	<files>
+		<filename module="mod_jshopping_extended_filter">mod_jshopping_extended_filter.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>element</folder>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+    
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_jshopping_extended_filter.ini</language>
+		<language tag="ru-RU">language/ru-RU.mod_jshopping_extended_filter.ini</language>
+		<language tag="vi-VN">language/vi-VN.mod_jshopping_extended_filter.ini</language>
+	</languages>	
+ 
+  	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_jshopping_extended_filter/element/">
+			
+				<field name="" type="header" default="MOD_JSHOP_EFILTER_MAIN_PARAMS_HEADER" label="" description=""/>
+				
+				<field name="moduleclass_sfx" type="text" default="" label="MOD_JSHOP_EFILTER_MODULE_CLASS_SUFFIX" description="MOD_JSHOP_EFILTER_PARAMMODULECLASSSUFFIX" />
+				
+				<field name="getTemplate" type="moduletemplate" modulename="mod_jshopping_extended_filter" default="Default" label="MOD_JSHOP_EFILTER_SELECT_SUBTEMPLATE" description=""/>
+				
+				<field name="search_results_text" type="text" default="Search results" label="MOD_JSHOP_EFILTER_SEARCH_RESULTS_TEXT" description="" />					
+				
+				<field name="text_no_results" type="text" default="No results" label="MOD_JSHOP_EFILTER_SEARCH_NO_RESULTS" description="" />				
+				<field name="" type="header" default="MOD_JSHOP_EFILTER_CATEGORY_REST_HEADER" label="" description=""/>
+				
+				<field name="restrict" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_RESTRICT_CAT" description="MOD_JSHOP_EFILTER_RESTRICT_CAT_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="restmode" type="radio" class="btn-group restmode" default="0" label="MOD_JSHOP_EFILTER_RESTRICTION_MODE" description="MOD_JSHOP_EFILTER_RESTRICTION_MODE_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_RESTRICTION_MODE_CATID</option>
+					<option value="1">MOD_JSHOP_EFILTER_RESTRICTION_MODE_AUTO</option>
+				</field>
+				
+				<field name="restcat" type="text" default="" label="MOD_JSHOP_EFILTER_RESTRICTION_CAT_ID" description="MOD_JSHOP_EFILTER_RESTRICTION_CAT_ID_DESC" />
+				
+				<field name="restsub" type="radio" class="btn-group" default="1" label="MOD_JSHOP_EFILTER_RESTRICTION_CAT_SUB" description="MOD_JSHOP_EFILTER_RESTRICTION_CAT_SUB_DESC">
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+				</field>
+				
+				<field name="" type="header" default="MOD_JSHOP_EFILTER_FILTER_PARAMS_HEADER" label="" description=""/>
+				
+				<field name="filters" type="filters" label="MOD_JSHOP_EFILTER_SELECT_FIELDS" description="MOD_JSHOP_EFILTER_SELECT_FIELDS_DESC" default="" />
+				
+				<field name="slider_fields" type="textarea" default="Product price=>0-100000" label="MOD_JSHOP_EFILTER_SLIDER_FIELDS" description="MOD_JSHOP_EFILTER_SLIDER_FIELDS_DESC" rows="5" cols="40" />
+				
+				<field name="" type="header" default="MOD_JSHOP_EFILTER_MISC_PARAMS_HEADER" label="" description=""/>
+				
+				<field name="cols" type="text" default="1" label="MOD_JSHOP_EFILTER_NUMBER_OF_COLS" description="" />
+				
+				<field name="button" type="radio" class="btn-group" default="1" label="MOD_JSHOP_EFILTER_SUBMIT_BUTTON_SHOW" description="MOD_JSHOP_EFILTER_SUBMIT_BUTTON_SHOW_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				<field name="button_text" type="text" default="Search" label="MOD_JSHOP_EFILTER_BUTTON_TEXT" description="MOD_JSHOP_EFILTER_BUTTON_TEXT_DESC" />
+				
+				<field name="clear_btn" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_CLEAR_BUTTON_SHOW" description="MOD_JSHOP_EFILTER_CLEAR_BUTTON_SHOW_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>	
+				
+				<field name="auto_submit" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_AUTO_SUBMIT" description="MOD_JSHOP_EFILTER_AUTO_SUBMIT_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="auto_counter" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_AUTO_COUNTER" description="MOD_JSHOP_EFILTER_AUTO_COUNTER_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="auto_fetch_attribs" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_AUTO_ATTRIBS" description="MOD_JSHOP_EFILTER_AUTO_ATTRIBS_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="attribs_only_actual_vals" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_ATTRIBS_ONLY_ACTUAL_VALS" description="MOD_JSHOP_EFILTER_ATTRIBS_ONLY_ACTUAL_VALS_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="auto_fetch_chars" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_AUTO_CHARS" description="MOD_JSHOP_EFILTER_AUTO_CHARS_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="dyno_chars_vals" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_DYNO_CHARS" description="MOD_JSHOP_EFILTER_DYNO_CHARS_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>
+				
+				<field name="" type="header" default="MOD_JSHOP_EFILTER_FILTER_PARAMS_RESULTS" label="" description=""/>
+	
+				<field name="results_template" type="list" default="generic" label="MOD_JSHOP_EFILTER_RESULTS_TEMPLATE" description="MOD_JSHOP_EFILTER_RESULTS_TEMPLATE_DESC">
+					<option value="generic">MOD_JSHOP_EFILTER_RESULTS_TEMPLATE_GENERIC</option>
+					<option value="category">MOD_JSHOP_EFILTER_RESULTS_TEMPLATE_CATEGORY</option>
+				</field>
+
+				<field name="ajax_results" type="radio" class="btn-group" default="0" label="MOD_JSHOP_EFILTER_AJAX_RESULTS" description="MOD_JSHOP_EFILTER_AJAX_RESULTS_DESC">
+					<option value="0">MOD_JSHOP_EFILTER_NO</option>
+					<option value="1">MOD_JSHOP_EFILTER_YES</option>
+				</field>	
+
+				<field name="ajax_container" type="text" default="#ajax_container" label="MOD_JSHOP_EFILTER_AJAX_CONTAINER" description="MOD_JSHOP_EFILTER_AJAX_CONTAINER_DESC" />	
+
+				<field name="itemid" type="menuitemid" default="" label="MOD_JSHOP_EFILTER_ITEMID" description="MOD_JSHOP_EFILTER_ITEMID_DESC" />
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="1" label="MOD_JSHOP_EFILTER_CACHING" description="MOD_JSHOP_EFILTER_CACHING_DESC">
+					<option value="1">MOD_JSHOP_EFILTER_USE_GLOBAL</option>
+					<option value="0">MOD_JSHOP_EFILTER_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="MOD_JSHOP_EFILTER_CACHE_TIME_LABEL" description="MOD_JSHOP_EFILTER_CACHE_TIME_DESC"/>
+			</fieldset>
+		</fields>
+	</config>	  
+</extension>

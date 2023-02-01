@@ -1,0 +1,88 @@
+/* admin styles */
+.clear {clear: both;}
+.paramHeaderContainer {clear:both; font-weight:bold; font-size:12px; color:#369; margin:5px 0; padding:7px; background:#d5e7fa; border-bottom:2px solid #96b0cb; float:left; width:95%;}
+#sortableFields {overflow: auto; margin: 5px 0 10px 0; list-style: none; width: 95%;}
+#sortableFields li { position: relative; color: #369; margin: 0; padding: 5px 5px 5px 10px; background: #d5e7fa; border-bottom: 1px solid #96b0cb; cursor: pointer; font-size: 12px; border-top: 1px solid #fff; border-radius: 3px;}
+#sortableFields li .sortableRightBlock { float: right; padding-right: 3px; }
+.field_type_select { margin: 0 7px 0 0; font-size: 10px; position: absolute; right: 15px; top: 4px; width: auto !important; height: auto !important; padding: 0 !important; }
+.deleteFilter { font-size: 11px; }
+.form-horizontal .control-label { max-width: 160px; }
+.btn-group.restmode label { padding: 6px; 
+	background: #e6e6e6 !important; border-color: #e6e6e6 #e6e6e6 #bfbfbf !important;
+	background-image: linear-gradient(to bottom, #fff, #e6e6e6) !important; color: #333 !important; }
+.btn-group.restmode .btn.active, .btn:active { text-shadow: none !important; box-shadow: inset 0 2px 5px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.05); }
+
+
+/* frontend styles */
+.ExtendedFilterContainer {
+}
+
+.ExtendedFilterContainer .inputbox {
+	text-align: right;
+}
+
+.ExtendedFilterContainer .filter-field-title-az a.active {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.ExtendedFilterContainer .filter-cell {
+	padding: 5px;
+	min-width: 200px;
+}
+
+.ExtendedFilterContainer select, .ExtendedFilterContainer button.ui-multiselect {
+	width: 200px !important;
+}
+
+.ExtendedFilterContainer a.uncheck {
+	font-size: 10px;
+}
+
+.ExtendedFilterContainer .slider_wrapper {
+	width: 180px;
+	padding: 0 10px;
+}
+
+.ExtendedFilterContainer .values-container img {
+	margin: 0 3px;
+}
+
+.auto_counter {
+	display: none;
+	width: 120px;
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	
+	border: 1px solid #d3d3d3;
+	border-radius: 4px;
+	background: #e6e6e6;
+	font-weight: normal;
+	font-size: 14px;
+	color: #555;
+	padding: 5px;
+	text-align: center;
+}
+
+.auto_counter button {
+	cursor: pointer;
+	padding: 1px 5px;
+	margin-top: 2px;
+}
+
+.ExtendedFilterContainer .multiple-select select {  
+	visibility: hidden;
+	float: left;
+	position: absolute;
+    margin: 0px !important;
+    padding: 0px !important;
+	height: 0px !important;
+	border: 0px !important;
+	display: block !important;
+}
+
+.ExtendedFilterContainer label { display: inline-block !important; }
+.ExtendedFilterContainer .button { display: inline-block; float: none; }

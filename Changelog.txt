@@ -1,0 +1,14 @@
+Jan 2023
+	* Compatibility with JoomShopping 5
+
+June 2021
+	* Fixed Labels field translation
+
+June 2020
+	* Slider mobile fix
+
+Mar 2019
+	* Fixed jQuery UI loading
+	
+-- 22.12.2018
+	* Compatible with JoomShopping 4.18.x
