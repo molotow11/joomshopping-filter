@@ -2,11 +2,11 @@
 <extension type="module" client="site" version="2.5" method="upgrade">
 	<name>Extended Filter for Joomshopping</name>
 	<author>Andrey M</author>
-	<creationDate>Jan 2016</creationDate>
+	<creationDate>Jan 2023</creationDate>
 	<copyright>Copyright (c) 2012 Andrey M. All rights reserved.</copyright>
 	<authorEmail></authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.4.3</version>
+	<version>1.5.0</version>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<description>Thank you for installing the Joomshopping Extended Search module</description>
 	
