@@ -75,14 +75,14 @@ jQuery(document).ready(function() {
 				type_select += "</select>";
 			}
 			jQuery("#sortableFields").append("<li><span class='val' rel='"+filterValues[i]+"'>" + 
-			title + "</span><span class='sortableRightBlock'>" + type_select + "<span class='deleteFilter'>x</span></span></li>");
+			title + "</span><span class='sortableRightBlock'>" + type_select + "<span class='deleteFilter'>&#x2715</span></span></li>");
 		}
 	}
 	
 	jQuery("#sortableFields").sortable({update: updateFiltersVal});
 	
-	jQuery("#sortableFields .deleteFilter").live('click', function() {
-		jQuery(this).parent().parent().remove();
+	jQuery("body").on('click', '#sortableFields .deleteFilter', (e) => {
+		jQuery(e.target).parent().parent().remove();
 		updateFiltersVal();
 	});
 	
@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
 			}
 		
 			jQuery("#sortableFields").append("<li><span class='val' rel='"+selected.val()+"'>"+ 
-			selected.val().split(":")[1] +"</span><span class='sortableRightBlock'>" + type_select + "<span class='deleteFilter'>x</span></span></li>");
+			selected.val().split(":")[1] +"</span><span class='sortableRightBlock'>" + type_select + "<span class='deleteFilter'>&#x2715</span></span></li>");
 			
 			updateFiltersVal();
 		}
