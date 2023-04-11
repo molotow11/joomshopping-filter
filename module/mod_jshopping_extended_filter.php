@@ -83,7 +83,7 @@ if($auto_fetch_attribs) {
 	$attributes_list = Array();
 	if(count($items)) {
 		foreach($items as $item) {
-			$js_product = JTable::getInstance('product', 'jshop');
+			$js_product = \JSFactory::getTable('product');
 			$js_product->load($item->product_id);
 			$attributesDatas = $js_product->getAttributesDatas();
 			$attributes = $js_product->getBuildSelectAttributes($attributesDatas['attributeValues'], $attributesDatas['attributeSelected']);
@@ -111,7 +111,7 @@ if($attribs_only_actual_vals) {
 	$attributes_active = Array();
 	if(count($items)) {
 		foreach($items as $product) {
-			$js_product = JTable::getInstance('product', 'jshop');
+			$js_product = \JSFactory::getTable('product');
 			$js_product->load($product->product_id);
 			$attributesDatas = $js_product->getAttributesDatas();
 			if(count($attributesDatas["attributeValues"])){
@@ -138,7 +138,7 @@ if($auto_fetch_chars) {
 	$chars_list = Array();
 	if(count($items)) {
 		foreach($items as $item) {
-			$js_product = JTable::getInstance('product', 'jshop');
+			$js_product = \JSFactory::getTable('product');
 			$js_product->load($item->product_id);
 			$chars = $js_product->getExtraFields();
 			if(count($chars)) {

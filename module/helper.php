@@ -60,11 +60,11 @@ class modJShopExtendedFilterHelper {
 		$query .= " LEFT JOIN #__jshopping_products_to_categories AS catrel ON prod.product_id = catrel.product_id";
 		
 		$where = Array();
-		if($restrict == 1 && $restcat != '' || ($restmode == 1 && JRequest::getVar("category"))) {
+		if($restrict == 1 && $restcat != '' || ($restmode == 1 && \JFactory::getApplication()->input->get("category"))) {
 				$restcat = str_replace(" ", "", $restcat);
 				
-				if($restcat == "" && $restmode == 1 && JRequest::getVar("category")) {
-					$restcat = JRequest::getVar("category");
+				if($restcat == "" && $restmode == 1 && \JFactory::getApplication()->input->get("category")) {
+					$restcat = \JFactory::getApplication()->input->get("category");
 				}
 				
 				if(!is_array($restcat)) {
@@ -92,9 +92,9 @@ class modJShopExtendedFilterHelper {
 				$where[] = "catrel.category_id IN (".$restcats.")";
 		}
 		
-		$manid = JRequest::getInt("manufacturer_id", "");
+		$manid = \JFactory::getApplication()->input->get("manufacturer_id", "");
 		if($manid == "") {
-			$manid = JRequest::getVar("manufacturer", "");
+			$manid = \JFactory::getApplication()->input->get("manufacturer", "");
 		}
 		if($manid != "") {
 			if(!is_array($manid)) {
@@ -110,7 +110,7 @@ class modJShopExtendedFilterHelper {
 			$query .= implode(" AND ", $where);
 		}
 
-		$is_search_results = JRequest::getInt("extended");
+		$is_search_results = \JFactory::getApplication()->input->get("extended");
 
 		if($is_search_results) {
 			$results = ExtendedFilterModel::getResults(false, true); 
@@ -178,11 +178,11 @@ class modJShopExtendedFilterHelper {
 		$query .= " LEFT JOIN #__jshopping_products_to_categories AS catrel ON prod.product_id = catrel.product_id";
 		
 		$where = Array();
-		if($restrict == 1 && $restcat != '' || ($restmode == 1 && JRequest::getVar("category"))) {
+		if($restrict == 1 && $restcat != '' || ($restmode == 1 && \JFactory::getApplication()->input->get("category"))) {
 				$restcat = str_replace(" ", "", $restcat);
 				
-				if($restcat == "" && $restmode == 1 && JRequest::getVar("category")) {
-					$restcat = JRequest::getVar("category");
+				if($restcat == "" && $restmode == 1 && \JFactory::getApplication()->input->get("category")) {
+					$restcat = \JFactory::getApplication()->input->get("category");
 				}
 				
 				if(!is_array($restcat)) {
@@ -210,9 +210,9 @@ class modJShopExtendedFilterHelper {
 				$where[] = "catrel.category_id IN (".$restcats.")";
 		}
 		
-		$manid = JRequest::getInt("manufacturer_id", "");
+		$manid = \JFactory::getApplication()->input->get("manufacturer_id", "");
 		if($manid == "") {
-			$manid = JRequest::getVar("manufacturer", "");
+			$manid = \JFactory::getApplication()->input->get("manufacturer", "");
 		}
 		if($manid != "") {
 			if(!is_array($manid)) {
@@ -471,6 +471,7 @@ class modJShopExtendedFilterHelper {
 		$db = JFactory::getDBO();
 		
 		$query = "SELECT * FROM #__modules WHERE id = {$id}";
+
 		$db->setQuery($query);
 		$result = $db->loadObject();
 		
@@ -491,11 +492,11 @@ class modJShopExtendedFilterHelper {
 		$query .= " LEFT JOIN #__jshopping_products_to_categories AS catrel ON prod.product_id = catrel.product_id";
 		
 		$where = Array();
-		if($restrict == 1 && $restcat != '' || ($restmode == 1 && JRequest::getVar("category"))) {
+		if($restrict == 1 && $restcat != '' || ($restmode == 1 && \JFactory::getApplication()->input->get("category"))) {
 				$restcat = str_replace(" ", "", $restcat);
 				
-				if($restcat == "" && $restmode == 1 && JRequest::getVar("category")) {
-					$restcat = JRequest::getVar("category");
+				if($restcat == "" && $restmode == 1 && \JFactory::getApplication()->input->get("category")) {
+					$restcat = \JFactory::getApplication()->input->get("category");
 				}
 				
 				if(!is_array($restcat)) {
@@ -524,9 +525,9 @@ class modJShopExtendedFilterHelper {
 				$where[] = "catrel.category_id IN (".$restcats.")";
 		}
 				
-		$manid = JRequest::getInt("manufacturer_id", "");
+		$manid = \JFactory::getApplication()->input->get("manufacturer_id", "");
 		if($manid == "") {
-			$manid = JRequest::getVar("manufacturer", "");
+			$manid = \JFactory::getApplication()->input->get("manufacturer", "");
 		}
 		if($manid != "") {
 			if(!is_array($manid)) {
@@ -587,11 +588,11 @@ class modJShopExtendedFilterHelper {
 		$query .= " LEFT JOIN #__jshopping_products_to_categories AS catrel ON prod.product_id = catrel.product_id";
 		
 		$where = Array();
-		if($restrict == 1 && $restcat != '' || ($restmode == 1 && JRequest::getVar("category"))) {
+		if($restrict == 1 && $restcat != '' || ($restmode == 1 && \JFactory::getApplication()->input->get("category"))) {
 				$restcat = str_replace(" ", "", $restcat);
 				
-				if($restcat == "" && $restmode == 1 && JRequest::getVar("category")) {
-					$restcat = JRequest::getVar("category");
+				if($restcat == "" && $restmode == 1 && \JFactory::getApplication()->input->get("category")) {
+					$restcat = \JFactory::getApplication()->input->get("category");
 				}
 				
 				if(!is_array($restcat)) {
@@ -619,9 +620,9 @@ class modJShopExtendedFilterHelper {
 				$where[] = "catrel.category_id IN (".$restcats.")";
 		}
 		
-		$manid = JRequest::getInt("manufacturer_id", "");
+		$manid = \JFactory::getApplication()->input->get("manufacturer_id", "");
 		if($manid == "") {
-			$manid = JRequest::getVar("manufacturer", "");
+			$manid = \JFactory::getApplication()->input->get("manufacturer", "");
 		}
 		if($manid != "") {
 			if(!is_array($manid)) {

@@ -20,7 +20,7 @@ class ExtendedFilterModel {
 		$cur_currency_value = (float)$db->loadResult();
 		
 		require_once (JPATH_SITE.DS.'modules'.DS.'mod_jshopping_extended_filter'.DS.'helper.php');
-		$moduleId = \JFactory::getApplication()->input->get("moduleId");
+		$moduleId = $_REQUEST["moduleId"];
 		$moduleParams = modJShopExtendedFilterHelper::getModuleParams($moduleId);
 		
 		$lang = JFactory::getLanguage();

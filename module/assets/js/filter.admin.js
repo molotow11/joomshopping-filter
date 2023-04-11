@@ -86,10 +86,10 @@ jQuery(document).ready(function() {
 		updateFiltersVal();
 	});
 	
-	jQuery("#sortableFields .field_type_select").live('change', function() {
+	jQuery("body").on("change", "#sortableFields .field_type_select", function() {
 		var selected = jQuery(this).find("option:selected").val();
 		var value = jQuery(this).parent().siblings(".val").attr("rel").split(":");
-		jQuery(this).parent().siblings(".val").attr("rel", value[0] + ":" + value[1] + ":" + value[2] + ":" + selected)
+		jQuery(this).parent().siblings(".val").attr("rel", value[0] + ":" + value[1] + ":" + value[2] + ":" + selected);
 		updateFiltersVal();
 	});
 	
