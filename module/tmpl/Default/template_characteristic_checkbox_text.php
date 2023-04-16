@@ -15,15 +15,15 @@ $checked = JFactory::getApplication()->input->get("char".$filter->id);
 		<?php 
 		if($char_vals) {
 			foreach($char_vals as $k=>$value) {		
-				echo '<input name="char'.$filter->id.'[]" type="checkbox" value="'.$value.'" id="'.$value.$filter->id.$k.'"';
+				echo '<input name="char'.$filter->id.'[]" type="checkbox" value="'.$value->name.'" id="'.$value->name.$filter->id.$k.'"';
 				
 				if($checked) {
 					foreach ($checked as $check) {
 						if ($check == $value) echo ' checked="checked"';
 					}
 				}
-				echo ' /><label for="'.$value.$filter->id.$k.'"';
-				echo '>'.$value.'</label>';
+				echo ' /><label for="'.$value->name.$filter->id.$k.'"';
+				echo '>'.$value->name.'</label>';
 				echo '<br />';
 			}
 		}
