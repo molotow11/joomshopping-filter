@@ -293,16 +293,16 @@ class ExtendedFilterModel {
 				}
 				foreach($value as $k=>$val) {
 					if($k == 0) {
-						$query .= "AND ((extra_field_{$char_id} REGEXP '^{$val}$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^{$val},.*$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^.*,{$val},.*$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^.*,{$val}$')";
+						$query .= "AND ((chars.extra_field_$char_id REGEXP '^{$val}$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^{$val},.*$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^.*,{$val},.*$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^.*,{$val}$')";
 					}
 					else {
-						$query .= " OR (extra_field_{$char_id} REGEXP '^{$val}$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^{$val},.*$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^.*,{$val},.*$'";
-						$query .= " OR extra_field_{$char_id} REGEXP '^.*,{$val}$')";
+						$query .= " OR (chars.extra_field_$char_id REGEXP '^{$val}$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^{$val},.*$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^.*,{$val},.*$'";
+						$query .= " OR chars.extra_field_$char_id REGEXP '^.*,{$val}$')";
 					}
 					if(($k+1) == count($value)) {
 						$query .= ") ";
@@ -561,7 +561,7 @@ class ExtendedFilterModel {
 		else if($getIdsForModule) {
 			$db->setQuery($query);
 			$results = $db->loadObjectList();
-			
+
 			return $results;			
 		}
 		else {
@@ -569,9 +569,19 @@ class ExtendedFilterModel {
 			$limit = \JFactory::getApplication()->input->get("limit");
 			if (!$limit) $limit = $products_page;
 			$limitstart = \JFactory::getApplication()->input->get('limitstart');
+
+			if(isset($_GET['debug'])) {
+				var_dump($query);
+				die;
+			}
 						
 			$db->setQuery($query, $limitstart, $limit);
 			$results = $db->loadObjectList();
+
+			if(isset($_GET['debug2'])) {
+				var_dump($results);
+				die;
+			}
 
 			//js group price plugin compatibility
 			$userShop = JSFactory::getUserShop();

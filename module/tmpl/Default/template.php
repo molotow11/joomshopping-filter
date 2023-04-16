@@ -481,7 +481,7 @@ $input = JFactory::getApplication()->input;
 			var module_pos = jQuery("<?php echo $ajax_container; ?>").offset();
 			window.scrollTo(module_pos.left, module_pos.top - 100);
 			
-			data = jQuery("#ExtendedFilterContainer<?php echo $module->id; ?> form").find("input[value!=''], select[value!='']").serialize() + "&format=raw";
+			data = jQuery("#ExtendedFilterContainer<?php echo $module->id; ?> form").find("input[value!=''], select[value!='']").serialize() + "&tmpl=raw";
 			
 			jQuery.ajax({
 				data: data,
@@ -508,7 +508,7 @@ $input = JFactory::getApplication()->input;
 						
 			jQuery.ajax({
 				type: "GET",
-				url: el.attr('href') + "&format=raw",
+				url: el.attr('href') + "&tmpl=raw",
 				success: function(response) {
 					response = jQuery(response);
 					response.find('div.pagination a').each(function() {

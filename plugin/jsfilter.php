@@ -92,7 +92,13 @@ class plgSystemJSFilter extends JPlugin {
 				ob_end_clean();
 
 				$doc = \JFactory::getDocument();
-				$doc->setBuffer($result, "component");
+				if($_REQUEST['tmpl'] === 'raw') {
+					echo $result;
+					return;
+				}
+				else {
+					$doc->setBuffer($result, "component");
+				}
 			}
 			
 	} // onAfterRoute
